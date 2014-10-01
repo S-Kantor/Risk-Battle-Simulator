@@ -115,14 +115,17 @@ for i in range (int(NumberofRounds)):
     TeamBRolls.sort()
 
     CompareRolls(TeamARolls, TeamBRolls)
-    for x in range (3):
-        TeamARolls.pop()
-        TeamBRolls.pop()
 
     print ("")
     print ("----------------------------")
     print ("Next round")
     print ("")
+
+    print ("A rolled: ", TeamARolls,"B rolled: ",TeamBRolls) #Prints roll's
+    
+    for x in range (3):
+        TeamARolls.pop()
+        TeamBRolls.pop()
 
     print("The amount of men Team A lost this round is: ", TeamA_LostMen)
     print("The amount of men Team B lost this round is: ", TeamB_LostMen)
@@ -133,22 +136,14 @@ for i in range (int(NumberofRounds)):
     print ("Team A has ", TeamA.amount, " men left")
     print ("Team B has ", TeamB.amount, " men left")
 
-    if TeamA_Attacking: #Check if game can proceed
-        if TeamA.amount <= 1:
-            print ("Too little men to proceed")
-            break
-    elif TeamB_Attacking:
-        if TeamB.amount <= 1:
-            print ("Too little men to proceed")
-            break
-
+    #Checks amount of men on eac team to determine if sim can continue
+    if TeamA.amount <= 1 or TeamB.amount <= 1:
+        print ("Too little men to proceed")
+        break
+    
     print ("")
-    user_input = input("Would you like to continue the simulation?(Press y to continue) : ")
+    user_input = input("Would you like to continue the simulation?(Press y to continue): ")
     if not user_input == 'y':
         break
-
-    
-
-
 
         
