@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 
 public class Main_Activity extends Activity {
@@ -12,6 +15,14 @@ public class Main_Activity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_);
+    }
+
+
+    public void startSim (View view) {
+
+        Toast startSim = Toast.makeText(getApplicationContext(),"Starting Simulation now!", Toast.LENGTH_LONG);
+        startSim.show();
+
     }
 
 
