@@ -101,7 +101,7 @@ TeamB = Team()
 isAttacking()
 
 #How many rounds you want to simulate
-NumberofRounds = input("How many rounds would you like to simulate: ")
+NumberofRounds = input("How many rounds would you like to simulate: ")  #you should add error exceptions here.
 
 #Main for loop
 
