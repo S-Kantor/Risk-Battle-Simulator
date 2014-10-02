@@ -16,16 +16,63 @@
         android:layout_centerHorizontal="true"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:id="@+id/textView" />
+        android:id="@+id/startingSimulationBut" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="49dp"
         android:text="@string/StartingButton"
         android:id="@+id/StartingButton1"
         android:onClick="startSim"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/startingSimulationBut"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please enter the amount \nof men on Team A"
+        android:textSize="16sp"
+        android:id="@+id/Team1EnterView"
+        android:layout_below="@+id/StartingButton1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="61dp" />
+    <EditText
+        android:id="@+id/enterTeamA"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enterMenHint"
+        android:inputType="number"
+        android:layout_toRightOf="@id/Team1EnterView"
+        android:layout_toEndOf="@id/Team1EnterView"
+        android:layout_alignBottom="@+id/Team1EnterView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please enter the amount \nof men on Team B"
+        android:textSize="16sp"
+        android:id="@+id/Team2EnterView"
+        android:layout_below="@+id/Team1EnterView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="29dp" />
+
+    <EditText
+        android:id="@+id/enterTeamB"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enterMenHint"
+        android:inputType="number"
+        android:layout_toRightOf="@id/Team2EnterView"
+        android:layout_toEndOf="@id/Team2EnterView"
+        android:layout_alignBottom="@+id/Team2EnterView"
+        android:layout_alignLeft="@+id/enterTeamA"
+        android:layout_alignStart="@+id/enterTeamA"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

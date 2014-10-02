@@ -4,6 +4,7 @@
     <string name="app_name">Risk_Battle_Simulator</string>
     <string name="Title">Risk Battle Simulator!!</string>
     <string name="StartingButton">Click here to start the simulation!!</string>
+    <string name="enterMenHint">Enter the amount!</string>
     <string name="action_settings">Settings</string>
 
 </resources>

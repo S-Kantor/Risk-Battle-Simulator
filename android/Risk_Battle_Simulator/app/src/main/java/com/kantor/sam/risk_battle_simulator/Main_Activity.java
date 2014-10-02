@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 
@@ -21,8 +22,26 @@ public class Main_Activity extends Activity {
     public void startSim (View view) {
 
         Toast startSim = Toast.makeText(getApplicationContext(),"Starting Simulation now!", Toast.LENGTH_LONG);
-        startSim.show();
+        //startSim.show();
+        EditText inputTeamA;
+        EditText inputTeamB;
 
+        inputTeamA = (EditText) findViewById(R.id.enterTeamA);
+        inputTeamB = (EditText) findViewById(R.id.enterTeamB);
+
+        //String TeamA_Amount = inputTeamA.getText().toString();
+        //String TeamB_Amount = inputTeamB.getText().toString();
+
+        //Toast output = Toast.makeText(getApplicationContext(), (TeamA_Amount + " "  + TeamB_Amount), Toast.LENGTH_LONG);
+        //output.show();
+
+        Team teamA = new Team();
+        Team teamB = new Team();
+        teamA.setInt(inputTeamA);
+        teamB.setInt(inputTeamB);
+
+        Toast output = Toast.makeText(getApplicationContext(), teamA.amount + teamA.amount, Toast.LENGTH_LONG);
+        output.show();
     }
 
 
