@@ -75,4 +75,38 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please click on the switch to\nchange which team is attacking"
+        android:textSize="16sp"
+        android:id="@+id/userInputView"
+        android:layout_below="@+id/Team2EnterView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp" />
+
+    <!--<EditText
+       android:id="@+id/userInput"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:hint="Enter A or B"
+       android:inputType="re"
+       android:layout_alignBottom="@+id/userInputView"
+       android:layout_alignParentRight="true"
+       android:layout_alignParentEnd="true"
+       android:layout_toRightOf="@+id/userInputView"
+       android:layout_toEndOf="@+id/userInputView" />*/
+       -->
+
+   <ToggleButton
+       android:id="@+id/toggleAttackingTeam"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textOn="A is attacking"
+       android:textOff="B is attacking"
+       android:layout_alignTop="@+id/userInputView"
+       android:layout_alignParentRight="true"
+       android:layout_alignParentEnd="true" />
+
 </RelativeLayout>
