@@ -105,6 +105,7 @@
        android:layout_height="wrap_content"
        android:textOn="A is attacking"
        android:textOff="B is attacking"
+       android:onClick="toggleClicked"
        android:layout_alignTop="@+id/userInputView"
        android:layout_alignParentRight="true"
        android:layout_alignParentEnd="true" />

@@ -41,6 +41,17 @@ public class Main_Activity extends Activity {
         teamB.setInt(inputTeamB);
 
         Toast output = Toast.makeText(getApplicationContext(), teamA.amount + teamA.amount, Toast.LENGTH_LONG);
+        //output.show();
+    }
+
+    public void toggleClicked(View view)
+    {
+        String whoIsAttacking = "";
+        Game toggleClicked = new Game();
+        toggleClicked.onToggleClicked(view);
+        toggleClicked.whoIsAttacking(whoIsAttacking);
+
+        Toast output = Toast.makeText(getApplicationContext(), whoIsAttacking, Toast.LENGTH_LONG);
         output.show();
     }
 
