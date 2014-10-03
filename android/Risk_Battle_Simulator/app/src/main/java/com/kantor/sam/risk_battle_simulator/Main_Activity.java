@@ -49,7 +49,7 @@ public class Main_Activity extends Activity {
         String whoIsAttacking = "";
         Game toggleClicked = new Game();
         toggleClicked.onToggleClicked(view);
-        toggleClicked.whoIsAttacking(whoIsAttacking);
+        whoIsAttacking = toggleClicked.whoIsAttacking(whoIsAttacking);
 
         Toast output = Toast.makeText(getApplicationContext(), whoIsAttacking, Toast.LENGTH_LONG);
         output.show();
