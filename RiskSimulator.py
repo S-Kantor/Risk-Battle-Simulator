@@ -18,6 +18,11 @@ TeamB_LostMen = 0
 keepGoing = True
 
 class Team:
+    '''
+    (None) --> (None)
+    Used to track amount of men on teams
+
+    '''
 
     def __init__ (self):
         while True:
@@ -31,6 +36,11 @@ class Team:
                 print ("Invalid Input")
 
 def isAttacking (): #Returns which team is attacking
+    '''
+    (None) --> (None)
+    Used to determine who is attacking, and set it to a boolean value.
+
+    '''
 
     global TeamA_Attacking
     global TeamB_Attacking
@@ -52,6 +62,12 @@ def isAttacking (): #Returns which team is attacking
         TeamB_Attacking = True
 
 def CompareRolls(A_Roll, B_Roll): #Compare Rolls between teams
+    '''
+    (List, List) --> (None)
+
+    Compares two lists of rolls, and gives points accordingly
+    
+    '''
 
     global TeamA_LostMen
     global TeamB_LostMen
@@ -73,6 +89,11 @@ def CompareRolls(A_Roll, B_Roll): #Compare Rolls between teams
                 TeamA_LostMen += 1
 
 def AddRolls (TeamARolls, TeamBRolls): #Adding Rolls
+    '''
+    (List, List) --> (None)
+    Based on conditions such as who is attacking, the two lists of rolls
+    get randomly filled with a number from one to six, as to simulate a dice roll.
+    '''
 
     if TeamA_Attacking: #If A is attacking
         if TeamA.amount > TeamB.amount: #and if A has more men, then roll 3 
