@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -26,7 +25,7 @@ public class Main_Activity extends Activity {
 
     public void onToggleClicked(View view) {
 
-        String whoIsAttacking = "";
+        String whoIsAttacking;
 
         ToggleButton toggle = (ToggleButton) findViewById (R.id.toggleAttackingTeam);
         boolean on = toggle.isChecked();
@@ -58,11 +57,11 @@ public class Main_Activity extends Activity {
         Team teamA = new Team();
         Team teamB = new Team();
 
-        String TeamA_amount_str = "";
-        String TeamB_amount_str = "";
+        String TeamA_amount_str;
+        String TeamB_amount_str;
 
-        Integer TeamA_amount_int = 0;
-        Integer TeamB_amount_int = 0;
+        Integer TeamA_amount_int;
+        Integer TeamB_amount_int;
 
         teamA.setInt(inputTeamA);
         teamB.setInt(inputTeamB);
