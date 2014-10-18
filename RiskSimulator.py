@@ -81,7 +81,7 @@ def CompareRolls(A_Roll, B_Roll): #Compare Rolls between teams
                 TeamA_LostMen += 1
             else:
                 TeamB_LostMen += 1
-    if TeamB_Attacking:
+    else:
         for n in range (2,0,-1): 
             if A_Roll[n] >= B_Roll[n]:
                 TeamB_LostMen += 1
