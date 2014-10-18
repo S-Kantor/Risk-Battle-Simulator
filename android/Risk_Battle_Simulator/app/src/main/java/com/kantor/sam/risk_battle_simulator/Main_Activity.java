@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.ToggleButton;
+
+import java.util.ArrayList;
 
 
 public class Main_Activity extends Activity {
@@ -18,41 +21,80 @@ public class Main_Activity extends Activity {
         setContentView(R.layout.activity_main_);
     }
 
+    public static Boolean TeamA_Attacking = false;
+    public static Boolean TeamB_Attacking = false;
+
+    public void onToggleClicked(View view) {
+
+        String whoIsAttacking = "";
+
+        ToggleButton toggle = (ToggleButton) findViewById (R.id.toggleAttackingTeam);
+        boolean on = toggle.isChecked();
+
+        if (on) {
+            TeamA_Attacking = true;
+            whoIsAttacking = "Team A is Attacking";
+        } else {
+            TeamB_Attacking = true;
+            whoIsAttacking = "Team B is Attacking";
+        }
+        Toast test = Toast.makeText(getApplicationContext(), whoIsAttacking, Toast.LENGTH_SHORT);
+        test.show();
+    }
 
     public void startSim (View view) {
 
-        Toast startSim = Toast.makeText(getApplicationContext(),"Starting Simulation now!", Toast.LENGTH_LONG);
+        //Toast startSim = Toast.makeText(getApplicationContext(),"Starting Simulation now!", Toast.LENGTH_LONG);
         //startSim.show();
         EditText inputTeamA;
         EditText inputTeamB;
 
+        ArrayList <Integer> TeamARolls = new ArrayList<Integer> ();
+        ArrayList <Integer> TeamBRolls = new ArrayList<Integer> ();
+
         inputTeamA = (EditText) findViewById(R.id.enterTeamA);
         inputTeamB = (EditText) findViewById(R.id.enterTeamB);
 
-        //String TeamA_Amount = inputTeamA.getText().toString();
-        //String TeamB_Amount = inputTeamB.getText().toString();
-
-        //Toast output = Toast.makeText(getApplicationContext(), (TeamA_Amount + " "  + TeamB_Amount), Toast.LENGTH_LONG);
-        //output.show();
-
         Team teamA = new Team();
         Team teamB = new Team();
+
+        String TeamA_amount_str = "";
+        String TeamB_amount_str = "";
+
+        Integer TeamA_amount_int = 0;
+        Integer TeamB_amount_int = 0;
+
         teamA.setInt(inputTeamA);
         teamB.setInt(inputTeamB);
 
-        Toast output = Toast.makeText(getApplicationContext(), teamA.amount + teamA.amount, Toast.LENGTH_LONG);
-        //output.show();
+        TeamA_amount_str = teamA.amount;
+        TeamB_amount_str = teamB.amount;
+
+        TeamA_amount_int = Integer.parseInt(TeamA_amount_str);
+        TeamB_amount_int = Integer.parseInt(TeamB_amount_str);
+
+        Game game = new Game();
+
+        onToggleClicked(view);
+
+        game.addRolls(TeamARolls, TeamBRolls, TeamA_amount_int, TeamB_amount_int,TeamA_Attacking,TeamB_Attacking);
+
+        //Toast output2 = Toast.makeText(getApplicationContext(),Toast.LENGTH_SHORT);
     }
 
-    public void toggleClicked(View view)
-    {
-        String whoIsAttacking = "";
-        Game toggleClicked = new Game();
-        toggleClicked.onToggleClicked(view);
-        whoIsAttacking = toggleClicked.whoIsAttacking(whoIsAttacking);
+    public void toggleClicked(View view) {
 
-        Toast output = Toast.makeText(getApplicationContext(), whoIsAttacking, Toast.LENGTH_LONG);
-        output.show();
+        //boolean Attacking = false;
+        //String whoIsAttacking = "";
+        //Game toggleClicked = new Game();
+        onToggleClicked(view);
+
+        //whoIsAttacking = toggleClicked.whoIsAttacking(whoIsAttacking);
+
+        //Toast output = Toast.makeText(getApplicationContext(), whoIsAttacking, Toast.LENGTH_SHORT);
+        //output.show();
+
+        //whoIsAttacking string, is used for debugging purposes.
     }
 
 
