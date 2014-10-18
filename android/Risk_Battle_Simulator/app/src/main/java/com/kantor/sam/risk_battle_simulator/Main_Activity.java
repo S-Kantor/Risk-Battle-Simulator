@@ -73,30 +73,41 @@ public class Main_Activity extends Activity {
         TeamA_amount_int = Integer.parseInt(TeamA_amount_str);
         TeamB_amount_int = Integer.parseInt(TeamB_amount_str);
 
+        Integer TeamA_Lostmen = 0;
+        Integer TeamB_Lostmen = 0;
+
+
         Game game = new Game();
 
         onToggleClicked(view);
 
         game.addRolls(TeamARolls, TeamBRolls, TeamA_amount_int, TeamB_amount_int,TeamA_Attacking,TeamB_Attacking);
+        String listString1 = "";
+        String listString2 = "";
 
-        //Toast output2 = Toast.makeText(getApplicationContext(),Toast.LENGTH_SHORT);
+        for (Integer s : TeamARolls)
+        {
+            listString1 += s + "\t";
+        }
+        for (Integer s : TeamBRolls)
+        {
+            listString2 += s + "\t";
+        }
+        
+        Toast output2 = Toast.makeText(getApplicationContext(), listString1, Toast.LENGTH_SHORT);
+        Toast output3 = Toast.makeText(getApplicationContext(),listString2, Toast.LENGTH_SHORT);
+        output2.show();
+        output3.show();
+
+        game.compareRolls(TeamARolls, TeamBRolls, TeamA_Lostmen, TeamB_Lostmen);
+        TeamA_Lostmen = game.TeamAReturn;
+        TeamB_Lostmen = game.TeamBReturn;
+
+        Toast output4 = Toast.makeText(getApplicationContext(), "Team A Lost: " + TeamA_Lostmen.toString(), Toast.LENGTH_SHORT);
+        Toast output5 = Toast.makeText(getApplicationContext(), "Team B Lost: " + TeamB_Lostmen.toString(), Toast.LENGTH_SHORT);
+        output4.show();
+        output5.show();
     }
-
-    public void toggleClicked(View view) {
-
-        //boolean Attacking = false;
-        //String whoIsAttacking = "";
-        //Game toggleClicked = new Game();
-        onToggleClicked(view);
-
-        //whoIsAttacking = toggleClicked.whoIsAttacking(whoIsAttacking);
-
-        //Toast output = Toast.makeText(getApplicationContext(), whoIsAttacking, Toast.LENGTH_SHORT);
-        //output.show();
-
-        //whoIsAttacking string, is used for debugging purposes.
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

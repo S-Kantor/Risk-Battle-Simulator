@@ -12,6 +12,10 @@ class Game {
     public Boolean TeamA_Attacking = false;
     public Boolean TeamB_Attacking = false;
 
+    public int TeamAReturn = 0;
+    public int TeamBReturn = 0;
+
+
     /*public String whoIsAttacking (String temp)
     {
         temp = "";
@@ -113,6 +117,43 @@ class Game {
 
         }
 
+    }
+
+    public void compareRolls (ArrayList<Integer> TeamARolls, ArrayList<Integer> TeamBRolls,
+                              Integer TeamA_LostMen, Integer TeamB_LostMen )
+    {
+        int x = 0;
+        if (TeamA_Attacking)
+        {
+            for (x = 2; x >= 1; x=x-1)
+            {
+                if (TeamBRolls.get(x) >= TeamARolls.get(x))
+                {
+                    TeamA_LostMen += 1;
+                }
+                else
+                {
+                    TeamB_LostMen += 1;
+                }
+            }
+        }
+        else
+        {
+            for (x = 2; x >= 1; x=x-1)
+            {
+                if (TeamARolls.get(x) >= TeamBRolls.get(x))
+                {
+                    TeamB_LostMen += 1;
+                }
+                else
+                {
+                    TeamA_LostMen += 1;
+                }
+            }
+        }
+
+        TeamAReturn = TeamA_LostMen;
+        TeamBReturn = TeamB_LostMen;
     }
 
 
