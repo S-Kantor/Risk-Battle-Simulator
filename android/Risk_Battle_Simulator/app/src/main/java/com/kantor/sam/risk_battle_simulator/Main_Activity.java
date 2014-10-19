@@ -92,7 +92,7 @@ public class Main_Activity extends Activity {
         {
             listString2 += s + "\t";
         }
-        
+
         Toast output2 = Toast.makeText(getApplicationContext(), listString1, Toast.LENGTH_SHORT);
         Toast output3 = Toast.makeText(getApplicationContext(),listString2, Toast.LENGTH_SHORT);
         output2.show();
@@ -106,6 +106,7 @@ public class Main_Activity extends Activity {
         Toast output5 = Toast.makeText(getApplicationContext(), "Team B Lost: " + TeamB_Lostmen.toString(), Toast.LENGTH_SHORT);
         output4.show();
         output5.show();
+
     }
 
     @Override
@@ -121,9 +122,6 @@ public class Main_Activity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 }
