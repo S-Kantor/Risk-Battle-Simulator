@@ -31,7 +31,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please enter the amount \nof men on Team A"
+        android:text="@string/TeamA_Edit"
         android:textSize="16sp"
         android:id="@+id/Team1EnterView"
         android:layout_below="@+id/StartingButton1"
@@ -53,7 +53,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please enter the amount \nof men on Team B"
+        android:text="@string/TeamB_Edit"
         android:textSize="16sp"
         android:id="@+id/Team2EnterView"
         android:layout_below="@+id/Team1EnterView"
@@ -78,7 +78,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please click on the switch to\nchange which team is attacking"
+        android:text="@string/Toggle"
         android:textSize="16sp"
         android:id="@+id/userInputView"
         android:layout_below="@+id/Team2EnterView"

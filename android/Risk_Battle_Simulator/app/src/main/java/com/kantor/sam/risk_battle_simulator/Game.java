@@ -1,7 +1,5 @@
 package com.kantor.sam.risk_battle_simulator;
 
-import android.view.View;
-import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -15,21 +13,6 @@ class Game {
     public int TeamAReturn = 0;
     public int TeamBReturn = 0;
 
-
-    /*public String whoIsAttacking (String temp)
-    {
-        temp = "";
-
-        if(TeamA_Attacking)
-        {
-            temp = "Team A is attacking";
-        }
-        if (TeamB_Attacking)
-        {
-            temp = "Team B is attacking";
-        }
-        return temp;
-    }*/
 
     public void compareRolls (int[] A_roll, int[] B_roll) {
         Integer TeamA_LostMen = 0;
@@ -55,7 +38,6 @@ class Game {
     public void addRolls (ArrayList<Integer> TeamARolls, ArrayList<Integer> TeamBRolls,
                           Integer teamA_amount, Integer teamB_amount, boolean TeamA_Attacking, boolean TeamB_Attacking)
     {
-        //whoIsAttacking()
 
         int x;
         Random rand = new Random();
@@ -122,7 +104,7 @@ class Game {
     public void compareRolls (ArrayList<Integer> TeamARolls, ArrayList<Integer> TeamBRolls,
                               Integer TeamA_LostMen, Integer TeamB_LostMen )
     {
-        int x = 0;
+        int x;
         if (TeamA_Attacking)
         {
             for (x = 2; x >= 1; x=x-1)

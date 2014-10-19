@@ -6,5 +6,8 @@
     <string name="StartingButton">Click here to start the simulation!!</string>
     <string name="enterMenHint">Enter the amount!</string>
     <string name="action_settings">Settings</string>
+    <string name="TeamB_Edit">Please enter the amount \nof men on Team B</string>
+    <string name="TeamA_Edit">Please enter the amount \nof men on Team A</string>
+    <string name="Toggle">Please click on the switch to\nchange which team is attacking</string>
 
 </resources>
