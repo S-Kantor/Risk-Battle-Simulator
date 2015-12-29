@@ -1,6 +1,5 @@
 ##
 #Name: Sam Kantor
-#
 ##
 
 import random
