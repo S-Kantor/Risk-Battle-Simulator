@@ -1,6 +1,5 @@
 ##
 #Name: Sam Kantor
-#Assignment: Risk simulator
 #
 ##
 
@@ -129,7 +128,7 @@ TeamB = Team()
 
 isAttacking()
 
-#How many rounds you want to simulate
+# How many rounds you want to simulate
 while True:
     try:
         NumberofRounds = int(input("How many rounds would you like to simulate: "))  #you should add error exceptions here.
@@ -139,7 +138,7 @@ while True:
     except:
         print ("Invalid Input")
         
-#Main for loop
+# Main for loop
 
 
 for i in range (int(NumberofRounds)):
